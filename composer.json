@@ -24,6 +24,9 @@
             "role": "Developer"
         }
     ],
+    "replace": {
+        "spatie/dropbox-api": "1.15.0"
+    },
     "require": {
         "php": "^7.1",
         "graham-campbell/guzzle-factory": "^3.0||^4.0",
