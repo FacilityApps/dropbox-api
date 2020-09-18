@@ -342,7 +342,17 @@ class Client
      */
     protected function shouldUploadChunked($contents): bool
     {
-        $size = is_string($contents) ? strlen($contents) : fstat($contents)['size'];
+        if (is_string($contents)) {
+            $size = strlen($contents);
+        } else {
+            $stat = fstat($contents);
+            
+            if (is_array($stat)) {
+                $size = $stat['size'];
+            } else {
+                $size = null;
+            }
+        }
 
         if ($this->isPipe($contents)) {
             return true;
@@ -364,7 +374,17 @@ class Client
      */
     protected function isPipe($contents): bool
     {
-        return is_resource($contents) ? (fstat($contents)['mode'] & 010000) != 0 : false;
+        if (!is_resource($contents)) {
+            return false;
+        }
+        
+        $stat = fstat($contents);
+        
+        if (!is_array($stat)) {
+            return false;
+        }
+        
+        return ($stat['mode'] & 010000) != 0;
     }
 
     /**
