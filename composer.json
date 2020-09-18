@@ -1,5 +1,5 @@
 {
-    "name": "spatie/dropbox-api",
+    "name": "facilityapps/dropbox-api",
     "description": "A minimal implementation of Dropbox API v2",
     "keywords": [
         "spatie",
@@ -8,7 +8,7 @@
         "api",
         "v2"
     ],
-    "homepage": "https://github.com/spatie/dropbox-api",
+    "homepage": "https://github.com/FacilityApps/dropbox-api",
     "license": "MIT",
     "authors": [
         {
