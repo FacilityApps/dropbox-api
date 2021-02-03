@@ -28,7 +28,7 @@
         "spatie/dropbox-api": "1.15.0"
     },
     "require": {
-        "php": "^7.1",
+        "php": "^7.1||~8.0",
         "graham-campbell/guzzle-factory": "^3.0||^4.0",
         "guzzlehttp/guzzle": "^6.2||^7.0"
     },
